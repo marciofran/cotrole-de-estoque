@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estoque da Bicicletaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #4c8577;
+
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .btn {
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        .btn-edit {
+            background-color: #28a745;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Estoque</h1>
+        <div>
+            <h2>Cadastro de Peças</h2>
+            <div class="form-group">
+                <label for="nome">Nome da Peça:</label>
+                <input type="text" id="nome">
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade">
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" step="0.01">
+            </div>
+            <button class="btn" onclick="adicionarPeca()">Adicionar Peça</button>
+        </div>
+
+        <div>
+            <h2>Buscar Peça</h2>
+            <div class="form-group">
+                <label for="buscar">Nome da Peça:</label>
+                <input type="text" id="buscar">
+            </div>
+            <button class="btn" onclick="buscarPeca()">Buscar</button>
+            <div id="resultadoBusca"></div>
+        </div>
+
+        <div>
+            <h2>Estoque Atual</h2>
+            <table id="tabelaEstoque">
+                <thead>
+                    <tr>
+                        <th>Nome da Peça</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As peças serão listadas aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
